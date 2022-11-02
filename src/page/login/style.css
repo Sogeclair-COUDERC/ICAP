@@ -1,0 +1,24 @@
+div#container-loginPage-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+div#container-loginPage-title {
+  text-align: center;
+  color: var(--cca-darkBlue);
+  width: fit-content;
+}
+
+div#container-loginPage-title h1 {
+  font-size: 96px;
+  margin: 64px 0 16px 0;
+}
+
+img#img-background {
+  position: fixed;
+  bottom: 0;
+  z-index: -10;
+}

@@ -1,0 +1,32 @@
+.form-category {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 8px;
+  grid-auto-rows: min-content;
+}
+
+.form-category .form-block {
+  border: 1px solid slategray;
+  border-radius: 5px;
+  margin: 6px;
+  padding: 6px;
+  height: fit-content;
+}
+
+.form-category .form-block:nth-child(1) {
+  grid-column: 1;
+}
+
+.form-category .form-block:nth-child(2),
+.form-category .form-block:nth-child(3) {
+  grid-column: 2;
+}
+
+.input-de .label {
+  font-size: 1rem;
+  padding-bottom: 2px;
+}
+
+.input-de .input {
+  padding: 2px;
+}

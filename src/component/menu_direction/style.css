@@ -1,0 +1,21 @@
+#container-directionPage-list {
+  padding-top: 20px;
+}
+
+#container-directionPage-list li {
+  padding-left: 20px;
+}
+
+#directionPage-list-1st-level,
+#directionPage-list-2nd-level,
+#directionPage-list-3rd-level {
+  list-style-type: none;
+}
+
+#container-directionPage-list p {
+  margin-bottom: 20px;
+}
+
+#directionPage-list-item-direction {
+  text-decoration: underline;
+}

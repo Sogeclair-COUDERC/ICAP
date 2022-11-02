@@ -1,0 +1,67 @@
+div#container-form {
+  width: calc(100% -2 * 12px);
+  margin: 12px;
+  border: 1px solid var(--cca-darkBlue);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+div#container-form h3 {
+  font-size: 36px;
+  color: var(--cca-darkBlue);
+  text-align: center;
+  width: 100%;
+  margin: 16px 0;
+}
+
+div#container-form .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+div#container-form .row#direction-form-row5 {
+  justify-content: center;
+}
+
+#direction-form-row5 a {
+  text-decoration: none;
+}
+
+div#container-form label {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.select select {
+  width: 175px;
+  height: 39px;
+
+  font-size: 1em;
+}
+
+.input_col3 {
+  width: calc(3 * 175px + 2 * 2 * 12px);
+}
+
+.input_col1 {
+  width: 175px;
+}
+
+.cca-direction-radioBtn.radio-fullcontainer {
+  width: 100%;
+}
+
+.cca-direction-radioBtn.radio-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.cca-direction-radioBtn.radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px;
+}

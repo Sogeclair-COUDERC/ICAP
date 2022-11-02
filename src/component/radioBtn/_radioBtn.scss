@@ -1,0 +1,105 @@
+.radio-fullcontainer {
+  &.disable {
+    opacity: 50%;
+  }
+  .radio-group.line {
+    display: flex;
+    flex-direction: row;
+    .radio-container {
+      margin-right: 15px;
+    }
+  }
+  .radio-container {
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &.left {
+      flex-direction: row-reverse;
+    }
+    &.top {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    &.bottom {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .radio-btn-container {
+      position: relative;
+      height: 25px;
+      width: 25px;
+      // Hide Default CheckBox
+      input {
+        position: absolute;
+        opacity: 0%;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+      }
+      // Cadre CheckBox
+      .radio-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border: solid slategray;
+        background-color: rgba(255, 255, 255, 0.233);
+        border-radius: 100%;
+      }
+      // Marqueur CheckBox
+      .checkmark {
+        position: absolute;
+        left: 7px;
+        top: -6px;
+        width: 15px;
+        height: 25px;
+        border: solid #2b0000;
+        border-width: 0 7px 6px 0;
+        border-radius: 4px;
+        transform: rotate(45deg);
+        opacity: 0%;
+        transition: opacity 0.2s ease-in-out;
+      }
+    }
+
+    .radio_label.right {
+      margin-left: 10px;
+    }
+    .radio_label.left {
+      margin-right: 10px;
+    }
+    .radio_label.top {
+      margin-bottom: 10px;
+    }
+    .radio_label.bottom {
+      margin-top: 10px;
+    }
+
+    .radio_label {
+      opacity: 0.7;
+    }
+    &:hover .radio_label {
+      opacity: 100%;
+      transition: opacity 0.2s ease-in-out;
+    }
+    &.active .checkmark,
+    &.active .radio_label {
+      opacity: 100%;
+      transition: opacity 0.2s ease-in-out;
+    }
+    &.radio-border {
+      background-color: #33648aa8;
+      transition: background-color 0.2s ease-in-out;
+    }
+    &.disable {
+      opacity: 50%;
+    }
+  }
+}

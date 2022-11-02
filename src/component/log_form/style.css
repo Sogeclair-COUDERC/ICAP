@@ -1,0 +1,60 @@
+.connection-form {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 100px;
+  width: 33%;
+  height: 33%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid #929292;
+  border-radius: 5px;
+  text-align: center;
+  z-index: +20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 32px;
+  padding: 10px;
+  cursor: default;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#login,
+#password {
+  font-weight: 200;
+  font-size: 16px;
+  color: #6f6f6f;
+  background-color: white;
+
+  width: 75%;
+  height: 2.5rem;
+  margin: 6px;
+
+  cursor: text;
+}
+
+#submit {
+  width: 75%;
+  height: 2.5rem;
+  padding: 10px 40px;
+  margin: 6px;
+
+  color: white;
+  background-color: var(--cca-darkBlue); /*#4189ba;*/
+
+  font-weight: bold;
+  font-size: 16px;
+
+  cursor: pointer;
+}

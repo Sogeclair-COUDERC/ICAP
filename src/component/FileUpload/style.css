@@ -1,0 +1,30 @@
+.uploadForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.uploadForm label {
+  cursor: pointer;
+  color: slategray;
+  font-weight: bold;
+}
+
+.uploadForm label:hover {
+  color: black;
+}
+
+.uploadForm .uploadForm-input {
+  display: none;
+}
+
+.uploadForm .display-fileName {
+  width: 30%;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid slategray;
+  border-radius: 5px;
+  margin: 8px;
+  padding: 0 4px;
+}

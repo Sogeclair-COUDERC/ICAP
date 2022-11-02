@@ -1,0 +1,28 @@
+#content-chiffrages-table {
+  --chiffrage-table-margin: 12px;
+  width: calc(100% - 2 * var(--chiffrage-table-margin));
+  margin: var(--chiffrage-table-margin);
+  height: calc(100% - 100px);
+}
+
+#content-chiffrages-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#content-chiffrages-table td,
+th {
+  vertical-align: middle;
+  padding: 4px;
+  font-size: 20px;
+
+  height: 50px;
+}
+
+#content-chiffrages-table table th {
+  background-color: #60bcf5;
+}
+
+#content-chiffrages-table tr:nth-child(2n) {
+  background-color: rgba(96, 188, 245, 0.12);
+}

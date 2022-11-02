@@ -1,0 +1,51 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#container-import-table {
+  height: auto;
+  overflow-y: auto;
+}
+
+#import-table {
+  width: 99%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0 6px;
+  padding: 4px;
+  border: 1px solid var(--cca-darkBlue);
+}
+
+#import-table thead {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+#import-table thead th:nth-child(1) {
+  width: 30%;
+}
+
+#import-table thead th:nth-child(2) {
+  width: 10%;
+}
+
+#import-table thead th:nth-child(3) {
+  width: 15%;
+}
+
+#import-table thead th:nth-child(4) {
+  width: 5%;
+}
+
+#import-table thead th:nth-child(5) {
+  width: 5%;
+}
+
+#import-table thead th:nth-child(6) {
+  width: 30%;
+}

@@ -1,0 +1,10 @@
+.icon {
+  margin: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition-duration: 0.2s;
+}
+
+.icon:hover {
+  opacity: 1;
+}

@@ -1,0 +1,70 @@
+.icap-button {
+  --icon-size: 32px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8px;
+
+  width: 175px;
+  height: 50px;
+  padding: 8px;
+
+  border-radius: 5px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  color: white;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 300;
+  font-size: 1.2rem;
+
+  cursor: pointer;
+}
+
+.icap-button-icon {
+  margin: 0 8px;
+}
+
+.icap-button-text {
+  width: 100%;
+  margin: 0 8px;
+}
+
+.button-intent-warning {
+  border: 1px solid #d16603;
+  background-color: #db9936;
+  opacity: 0.7;
+}
+
+.button-intent-warning:hover {
+  opacity: 1;
+}
+
+.button-intent-success {
+  border: 1px solid #5d8c47;
+  background-color: #8fcc5e;
+  opacity: 0.7;
+}
+
+.button-intent-success:hover {
+  opacity: 1;
+}
+
+.button-intent-default {
+  background-color: #4189ba;
+  border: 1px solid #0062a1;
+  opacity: 0.7;
+}
+
+.button-intent-default:hover {
+  opacity: 1;
+}
+
+.button-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

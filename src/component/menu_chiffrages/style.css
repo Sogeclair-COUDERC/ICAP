@@ -1,0 +1,19 @@
+#navbar {
+  font-family: var(--cca-font-family), sans-serif;
+  font-size: 20px;
+
+  background-color: var(--cca-darkBlue);
+  color: white;
+
+  width: var(--cca-navbar-width);
+  height: 100%;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar .icap-button {
+  width: calc(var(--cca-navbar-width) - 24px);
+  margin: 12px;
+}

@@ -1,0 +1,31 @@
+div#container-background {
+  width: 100%;
+  margin: 0;
+  /* border: 3px solid red; */
+}
+
+img#img-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -10;
+}
+
+img#img-fond {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  margin: 0 auto;
+  z-index: -20;
+}
+
+img#img-logo-cca {
+  width: 15%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -20;
+}
