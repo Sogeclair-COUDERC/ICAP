@@ -29,7 +29,7 @@ const Chiffrages = () => {
         array["title"] = [estimation.assessment[i].title];
         tab.push(array);
       }
-      console.log(tab);
+      console.log("init " + tab);
     return tab;
   
   }
@@ -100,7 +100,6 @@ const Chiffrages = () => {
             "technicalModification":estimation.assessment[i].technicalModification
           };
           estimation.assessment.push(myest);
-          console.log(estimation.assessment);
           return 1; 
         }
     }
@@ -142,6 +141,7 @@ const Chiffrages = () => {
       //const newTab = data.filter((row) => row.id !== id);
       //setData(newTab);
       setData(dataattribut());
+      console.log("suppression " + id );
     } catch (error) {
       console.error("Can not delete assessment", error);
       alert(
@@ -154,7 +154,7 @@ const Chiffrages = () => {
     try {
       duplicate(assessmentId);
       setData(dataattribut());
-      console.log(assessmentId);
+      console.log("duplication " + assessmentId);
       
     } catch (error) {
       console.error("Can not duplicate assessment.", error);
