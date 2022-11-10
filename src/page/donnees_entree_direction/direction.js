@@ -54,8 +54,8 @@ const Direction = () => {
 
     // HANDLE ROLE
     const user = JSON.parse(sessionStorage.getItem("user"));
-
-    if (user.role === "Direction") setDisabled(false);
+    console.log(user);
+    if (user === "Direction") setDisabled(false);
     console.log("user : ", user, user["role"], disabled);
 
     // GET SELECT VALUES
@@ -249,11 +249,11 @@ const Direction = () => {
               </div>
 
               <div className="row" id="direction-form-row5">
-                <Link to="/chiffrages">
+                <Link to="/chiffrages/">
                   <Button
                     intent="warning"
                     title="Cancel"
-                    href="/chiffrages"
+                    href="/chiffrages/"
                   ></Button>
                 </Link>
                 <Button type="submit" intent="success" title="Save"></Button>

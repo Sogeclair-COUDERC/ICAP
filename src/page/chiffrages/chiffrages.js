@@ -5,15 +5,123 @@ import MenuChiffrages from "../../component/menu_chiffrages/menuChiffrages";
 import TableRow from "../../component/tableRow/TableRow";
 import Icon from "../../component/icon/Icon";
 import "./style.css";
+import estimation from './estimation.json';
 
 const Chiffrages = () => {
   const base = process.env.REACT_APP_API_URL;
-
   // States
   const [data, setData] = useState([]);
 
+  // Permet la récupération des données assessment 
+  function dataattribut(){
+    const array = [];
+    const tab = [];
+    for(var i in estimation.assessment) {
+        array["customer"] = [customerID(estimation.assessment[i].customer_id)];
+        array["estimation"] = [estimation.assessment[i].estimation];
+        array["firstdelivery"] = [estimation.assessment[i].firstDeliveryOn]; 
+        array["id"] = [estimation.assessment[i].id];
+        array["label"] = [estimation.assessment[i].label];
+        array["lastupdateOn"] = [estimation.assessment[i].lastUpdateOn];
+        array["partfamily"] = [PartFamily(estimation.assessment[i].partFamily_id)];
+        array["program"] = [Program(estimation.assessment[i].program_id)];
+        array["status"] = [assessmentStatus(estimation.assessment[i].assessmentStatus_id)];
+        array["title"] = [estimation.assessment[i].title];
+        tab.push(array);
+      }
+      console.log(tab);
+    return tab;
+  
+  }
+
+  function customerID(id){
+    for(var i in estimation.Customer) {
+      if(estimation.Customer[i].id === id){
+        return estimation.Customer[i].name;
+      }
+    }
+  }
+
+  function Program(id){
+    for(var i in estimation.Program) {
+      if(estimation.Program[i].id === id){
+        return estimation.Program[i].name;
+      }
+    }
+  }
+
+  function PartFamily(id){
+    for(var i in estimation.PartFamily) {
+      if(estimation.PartFamily[i].id === id){
+        return estimation.PartFamily[i].name;
+      }
+    }
+  }
+
+  function assessmentStatus(id){
+    for(var i in estimation.assessmentStatus) {
+      if(estimation.assessmentStatus[i].id === id){
+        return estimation.assessmentStatus[i].name;
+      }
+    }
+  }
+
+  function getlastId(){
+    let lenght = 0;
+    for(var i in estimation.assessment) {
+      if(estimation.assessment[i].id > lenght){
+        lenght = estimation.assessment[i].id;
+      }
+    }
+    return lenght;
+  }
+  // Permet la récupération des données assessment 
+  function duplicate(id){
+    let idE = getlastId();
+    idE ++;
+    let ide = id.toString();
+    for(var i in estimation.assessment) {
+      let idInt = estimation.assessment[i].id.toString();
+        if(idInt === ide){
+          var myest = {
+            "id": idE,
+            "label":null,
+            "title": estimation.assessment[i].title + " (copy)",
+            "lastUpdateOn":estimation.assessment[i].lastUpdateOn,
+            "assessmentStatus_id":estimation.assessment[i].assessmentStatus_id,
+            "estimation":null,
+            "customer_id":estimation.assessment[i].customer_id,
+            "program_id":estimation.assessment[i].program_id,
+            "partFamily_id":estimation.assessment[i].partFamily_id,
+            "receptionAO":estimation.assessment[i].receptionAO,
+            "firstDeliveryOn":estimation.assessment[i].firstDeliveryOn,
+            "transferOfWork":estimation.assessment[i].transferOfWork,
+            "siteQualificationNeed":estimation.assessment[i].siteQualificationNeed,
+            "technicalModification":estimation.assessment[i].technicalModification
+          };
+          estimation.assessment.push(myest);
+          console.log(estimation.assessment);
+          return 1; 
+        }
+    }
+  }
+
+  // Permet la récupération des données assessment 
+  function deleteAss(id){
+    let ide = id.toString();
+    for(var i in estimation.assessment) {
+      let idInt = estimation.assessment[i].id.toString();
+        if(idInt === ide){
+          console.log(estimation.assessment[i]);
+          delete estimation.assessment[i];
+          console.log(estimation.assessment);
+        }
+      }
+  }
+
   // Effects
   useEffect(() => {
+    setData(dataattribut());
     async function getList(endpoint) {
       try {
         let reponse = await axios.get(`${base + endpoint}`);
@@ -24,19 +132,16 @@ const Chiffrages = () => {
         setData([]);
       }
     }
-
-    getList("api/assessment/getAssessments");
   }, []);
 
   async function handleAssessmentDelete(e, id) {
     try {
-      const response = await axios.get(
-        `${base}api/assessment/delete?assessmentId=${id}`
-      );
-      console.log(`Assessment (id=${id}) deleted.`, response);
+      deleteAss(id);
+
       // Update State to rerender the table according to the new state of the DB
-      const newTab = data.filter((row) => row.id !== id);
-      setData(newTab);
+      //const newTab = data.filter((row) => row.id !== id);
+      //setData(newTab);
+      setData(dataattribut());
     } catch (error) {
       console.error("Can not delete assessment", error);
       alert(
@@ -47,14 +152,10 @@ const Chiffrages = () => {
 
   async function handleDuplicate(assessmentId) {
     try {
-      const response = await axios.get(
-        `${base}api/assessment/duplicate?assessmentId=${assessmentId}`
-      );
-      setData(response.data);
-      console.log(
-        `Assessment (id = ${assessmentId}) duplicated.`,
-        response.data
-      );
+      duplicate(assessmentId);
+      setData(dataattribut());
+      console.log(assessmentId);
+      
     } catch (error) {
       console.error("Can not duplicate assessment.", error);
       alert(

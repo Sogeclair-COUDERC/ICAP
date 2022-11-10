@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <>
       <div id="container-loginPage-content">
-        <img id="img-background" src="/icap_fond_login_3.jpg"></img>
+        <img id="img-background" src="./icap_fond_login_3.jpg"></img>
         <div id="container-loginPage-title">
           <h1>ICAP</h1>
         </div>

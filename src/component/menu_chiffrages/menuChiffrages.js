@@ -41,12 +41,13 @@ const MenuChiffrages = () => {
   ));
 
   const user = JSON.parse(sessionStorage.getItem("user"));
+  console.log(user);
 
   const addIcon = <FontAwesomeIcon icon={faCirclePlus} />;
 
   return (
     <div id="navbar">
-      {user.role.toLowerCase() === "direction" ? (
+      {user === "Direction" ? (
         <Link to="/direction">
           <Button
             type="button"

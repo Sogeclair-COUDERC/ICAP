@@ -1,0 +1,15 @@
+{
+    "User":[
+        { "login":"direction", "password":"direction", "role_id":"Direction" }, 
+        { "login":"bureau", "password":"bureau", "role_id":"Bureau d'etude" }, 
+        { "login":"Manufacturing", "password":"Manufacturing", "role_id":"Manufacturing Engineering" }, 
+        { "login":"admin", "password":"admin", "role_id":"Administrateur" }
+    ],
+    
+    "Role":[
+        {"id":"1","label":"Direction"},
+        {"id":"2","label":"Bureau d'etude"},
+        {"id":"3","label":"Manufacturing Engineering"},
+        {"id":"4","label":"Administrateur"}
+    ]
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./style.css";
+import User from './user.json';
 
 const Log = () => {
   const [login, setLogin] = useState("");
@@ -16,24 +17,29 @@ const Log = () => {
     console.log("ldap_Check : " + ldap_Check);
   };
 
+  function connection() {
+    const array = [];
+
+    for(var i in User.User) {
+      array.push([User.User[i].login,User.User[i].password, User.User[i].role_id]);
+    }
+    console.log(login);
+    console.log(password);
+    for(var y = 0; y < array.length; y++){
+      if(array[y][0] === login && array[y][1] === password){
+        return [login, password, array[y][2]];
+      }
+    }
+  };
+  
+  
+
   // Verification login password sur le LDAP
   const validationLDAP = async () => {
     let isUserAuthentified = false;
     if (login !== "" && password !== "") {
-      let connection;
       try {
-        connection = await axios({
-          method: "post",
-          url: `${ipServ}api/ldap/postLDAP_auth`,
-          withCredentials: true,
-          data: {
-            userLogin: login,
-            userPassword: password,
-          },
-        });
-
-        let user = connection.data;
-
+        let user = connection();
         if (user) {
           isUserAuthentified = true;
           sessionStorage.setItem("user", JSON.stringify(user));

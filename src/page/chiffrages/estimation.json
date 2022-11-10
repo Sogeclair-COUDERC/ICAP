@@ -1,0 +1,33 @@
+{
+"Program":[
+	{"id":"1","name":"Trappe A320"},
+	{"id":"2","name":"Trappe A330"},
+	{"id":"3","name":"Trappe A350"}
+],
+
+"PartFamily":[
+	{"id":"1","name":"Karman"},
+	{"id":"2","name":"Belly Fairing"},
+	{"id":"3","name":"Case de train"}
+],
+
+"Customer":[
+	{"id":"1","name":"AIRBUS"},
+	{"id":"2","name":"DASSAULT"}
+],
+
+"assessment":[
+	{"id":"51","label":null,"title":"TEST : DELETE","lastUpdateOn":"2022-10-04","assessmentStatus_id":"1","estimation":null,"customer_id":"1","program_id":"1","partFamily_id":"1","receptionAO":"2022-10-04","firstDeliveryOn":"2022-10-11","transferOfWork":"1","siteQualificationNeed":"0","technicalModification":"0"},
+	{"id":"72","label":null,"title":"TEST : Empty SELECT","lastUpdateOn":"2022-10-06","assessmentStatus_id":"1","estimation":null,"customer_id":"1","program_id":"3","partFamily_id":"2","receptionAO":"2022-10-03","firstDeliveryOn":"2022-10-10","transferOfWork":"1","siteQualificationNeed":"0","technicalModification":"0"},
+	{"id":"88","label":null,"title":"TEST : Empty SELECT (Copy)","lastUpdateOn":"2022-10-06","assessmentStatus_id":"1","estimation":null,"customer_id":"1","program_id":"3","partFamily_id":"2","receptionAO":"2022-09-01","firstDeliveryOn":"2022-09-01","transferOfWork":"1","siteQualificationNeed":"0","technicalModification":"0"},
+	{"id":"90","label":null,"title":"TEST : Empty SELECT (Copy) (Copy)","lastUpdateOn":"2022-10-24","assessmentStatus_id":"1","estimation":null,"customer_id":"1","program_id":"3","partFamily_id":"2","receptionAO":"2022-08-04","firstDeliveryOn":"2022-08-04","transferOfWork":"1","siteQualificationNeed":"0","technicalModification":"0"},
+	{"id":"91","label":null,"title":"TEST : DELETE (Copy)","lastUpdateOn":"2022-10-24","assessmentStatus_id":"1","estimation":null,"customer_id":"1","program_id":"1","partFamily_id":"1","receptionAO":"2022-09-02","firstDeliveryOn":"2022-09-02","transferOfWork":"1","siteQualificationNeed":"0","technicalModification":"0"}
+],
+
+"assessmentStatus":[
+	{"id":"1","name":"En Cours"},
+	{"id":"2","name":"Annulé"},
+	{"id":"3","name":"Terminé"}
+] 
+
+}
